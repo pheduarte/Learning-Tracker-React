@@ -1,6 +1,5 @@
 import { useState } from "react";
-import type { GoalCategory } from "./CourseGoal";
-
+import type { GoalCategory } from "../types/courseGoal";
 export type NewGoalData = {
   title: string;
   description: string;
