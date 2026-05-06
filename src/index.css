@@ -111,7 +111,6 @@ p {
 
 ul {
   list-style-type: none;
-  
 }
 
 .delete-button {
@@ -150,7 +149,7 @@ ul {
 .dashboard {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-between;
   gap: 24px;
   padding: 24px;
   margin: 24px;
