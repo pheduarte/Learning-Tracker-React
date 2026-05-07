@@ -46,7 +46,7 @@ function CourseGoalList() {
         <GoalDashboard goals={courseGoals} />
       </section>
 
-      <div>
+      <div className="searchbar">
         <label htmlFor="goal-search">Search goals</label>
         <input
           id="goal-search"
@@ -58,7 +58,7 @@ function CourseGoalList() {
       </div>
 
       {/* Filter controls: Allow users to filter the goal list */}
-      <div>
+      <div className="filters">
         {/* Category filter dropdown */}
         <label htmlFor="category-filter">Filter by category</label>
         <select

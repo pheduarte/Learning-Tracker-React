@@ -68,7 +68,7 @@ function NewGoalForm({ onAddGoal }: NewGoalFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="new-goal-form" onSubmit={handleSubmit}>
       {/* Title input field */}
       <div className="new-goal-form-title">
         <label htmlFor="title">Goal title</label>
@@ -117,7 +117,11 @@ function NewGoalForm({ onAddGoal }: NewGoalFormProps) {
       {/* Submit button */}
       {/* The button is disabled (grayed out) when the form is invalid */}
       {/* This prevents users from submitting incomplete forms */}
-      <button className="new-goal-form-button" type="submit" disabled={isFormInvalid}>
+      <button
+        className="new-goal-form-button"
+        type="submit"
+        disabled={isFormInvalid}
+      >
         Add Goal
       </button>
     </form>

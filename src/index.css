@@ -35,7 +35,7 @@
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
-    --bg: #16171d;
+    --bg: #02040f;
     --border: #2e303a;
     --code-bg: #1f2028;
     --accent: #c084fc;
@@ -215,6 +215,12 @@ ul {
   font-size: 16px;
 }
 
+.new-goal-form {
+  margin: 0 auto;
+  max-width: 520px;
+  width: min(100%, 520px);
+}
+
 .new-goal-form-button {
   padding: 12px 24px;
   border: none;
@@ -228,4 +234,37 @@ ul {
 .new-goal-form-button:disabled {
   background: var(--accent-bg);
   cursor: not-allowed;
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 24px;
+}
+
+.searchbar input {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  font-size: 16px;
+  width: 80%;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin: 24px;
+}
+
+.filters select {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  font-size: 16px;
 }
