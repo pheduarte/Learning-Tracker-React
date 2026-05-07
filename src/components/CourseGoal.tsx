@@ -9,9 +9,6 @@ type CourseGoalProps = {
   onComplete: (id: number) => void;        // Callback function when complete button is clicked
 };
 
-// CourseGoal component: Renders a single goal card with its details and action buttons
-// This is a "presentational" component - it receives data via props and displays it
-// It calls callback functions when buttons are clicked but doesn't manage state itself
 function CourseGoal({ goal, onDelete, onComplete }: CourseGoalProps) {
   return (
     <article className="course-goal">
