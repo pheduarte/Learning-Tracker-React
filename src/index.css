@@ -53,6 +53,16 @@
   border-radius: 8px;
 }
 
+.app--dark .new-todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: #838383 1px solid;
+  padding: 1rem;
+  box-shadow: #111827 1px 2px 2px -1px;
+  border-radius: 8px;
+}
+
 .app--light .new-todo-form input, .app--light .new-todo-form textarea {
   padding: 0.5rem;
   border-radius: 8px;
@@ -60,7 +70,21 @@
   font-size: 16px;
 }
 
+.app--dark .new-todo-form input, .app--dark .new-todo-form textarea {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: #838383 1px solid;
+  font-size: 16px;
+}
+
 .app--light .new-todo-form select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: #838383 1px solid;
+  font-size: 16px;
+}
+
+.app--dark .new-todo-form select {
   padding: 0.5rem;
   border-radius: 8px;
   border: #838383 1px solid;
@@ -77,6 +101,16 @@
   cursor: pointer;
 }
 
+.app--dark .new-todo-form Button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 .app--light .new-todo-form Button:disabled {
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -84,6 +118,21 @@
   background: #9bbef5;
   color: white;
   cursor: not-allowed;
+}
+
+.app--dark .new-todo-form Button:disabled {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #9bbef5;
+  color: white;
+  cursor: not-allowed;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .todo-list li{
@@ -125,6 +174,28 @@
   border-radius: 8px;
   border: none;
   background: #10b981;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  border-top: #83838347 1px solid;
+  border-bottom: #83838347 1px solid;
+  padding: 1rem;
+}
+
+.settings Button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #3b82f6;
   color: white;
   font-size: 16px;
   cursor: pointer;
