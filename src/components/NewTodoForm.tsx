@@ -1,12 +1,6 @@
 import { useState } from "react";
-import type { TodoCategory } from "../types/Todo";
+import type { NewTodoData, TodoCategory } from "../types/Todo";
 import Button from "./ui/Button";
-
-export type NewTodoData = {
-  title: string;
-  description?: string;
-  category: TodoCategory;
-};
 
 type NewTodoFormProps = {
   onAddTodo: (todoData: NewTodoData) => void;
@@ -40,7 +34,7 @@ function NewTodoForm({ onAddTodo }: NewTodoFormProps) {
 
   return (
     <form className="new-todo-form" onSubmit={handleSubmit}>
-      <h2>Add New Todo</h2>
+      <h2 className="text-3xl font-bold underline">Add New Todo</h2>
 
       <label htmlFor="todo-title">Title</label>
       <input
@@ -48,6 +42,7 @@ function NewTodoForm({ onAddTodo }: NewTodoFormProps) {
         type="text"
         value={title}
         onChange={(event) => setTitle(event.target.value)}
+        className="border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
 
       <label htmlFor="todo-description">Description</label>
@@ -55,6 +50,7 @@ function NewTodoForm({ onAddTodo }: NewTodoFormProps) {
         id="todo-description"
         value={description}
         onChange={(event) => setDescription(event.target.value)}
+        className="border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
 
       <label htmlFor="todo-category">Category</label>
@@ -64,6 +60,7 @@ function NewTodoForm({ onAddTodo }: NewTodoFormProps) {
         onChange={(event) =>
           setCategory(event.target.value as TodoCategory)
         }
+        className="border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         <option value="bills">Bills</option>
         <option value="groceries">Groceries</option>

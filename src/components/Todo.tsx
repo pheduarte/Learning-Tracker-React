@@ -4,8 +4,8 @@ import { memo } from "react";
 
 type TodoProps = {
   task: TodoData;
-  onDelete: (id: number) => void;
-  onComplete: (id: number) => void;
+  onDelete: (id: string) => void;
+  onComplete: (id: string) => void;
 };
 
 const Todo = memo(function Todo({ task, onDelete, onComplete }: TodoProps) {

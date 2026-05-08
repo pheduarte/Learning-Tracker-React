@@ -3,7 +3,11 @@ import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
 
 function TodoList() {
-  const { todos, addTodo, deleteTodo, completeTodo } = useTodos();
+  const { todos, addTodo, deleteTodo, completeTodo, isLoading } = useTodos();
+
+  if (isLoading) {
+    return <p>Loading tasks...</p>;
+  }
 
   return (
     <section className="todo-list">
@@ -24,7 +28,6 @@ function TodoList() {
           ))}
         </ul>
       )}
-      
     </section>
   );
 }

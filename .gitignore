@@ -11,6 +11,7 @@
 .DS_Store
 .env
 .env.*
+!.env.example
 
 # logs
 npm-debug.log*
@@ -38,6 +39,9 @@ lerna-debug.log*
 # OS generated files
 Thumbs.db
 ehthumbs.db
+
+# dotenv environment variables file
+/.env.local
 
 # npm package lock files are usually committed, but can be ignored if you prefer
 # package-lock.json
