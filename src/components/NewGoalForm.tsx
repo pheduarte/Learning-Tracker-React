@@ -4,6 +4,7 @@ import { useState } from "react";
 // Import TypeScript type definitions
 // GoalCategory: type for the category dropdown options
 import type { GoalCategory } from "../types/courseGoal";
+import Button from "./ui/Button";
 
 // Define the shape of data that will be submitted from this form
 // This type is exported so other components can use it
@@ -117,13 +118,9 @@ function NewGoalForm({ onAddGoal }: NewGoalFormProps) {
       {/* Submit button */}
       {/* The button is disabled (grayed out) when the form is invalid */}
       {/* This prevents users from submitting incomplete forms */}
-      <button
-        className="new-goal-form-button"
-        type="submit"
-        disabled={isFormInvalid}
-      >
+      <Button type="submit" disabled={isFormInvalid}>
         Add Goal
-      </button>
+      </Button>
     </form>
   );
 }

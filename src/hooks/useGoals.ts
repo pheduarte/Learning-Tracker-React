@@ -6,6 +6,7 @@ import type {
 } from "../types/courseGoal";
 import type { NewGoalData } from "../components/NewGoalForm";
 import { useLocalStorage } from "./useLocalStorage";
+import { goalsReducer } from "../reducers/goalsReducer";
 
 type GoalCategoryFilter = GoalCategory | "all";
 type GoalStatusFilter = GoalStatus | "all";
@@ -49,30 +50,16 @@ export function useGoals() {
 
   const [searchQuery, setSearchQuery] = useState("");
 
-  function addGoal({ title, description, category }: NewGoalData) {
-    const newGoal: CourseGoalData = {
-      id: Math.random(),
-      title,
-      description,
-      category,
-      status: "active",
-    };
-
-    setCourseGoals((currentGoals) => [newGoal, ...currentGoals]);
+  function dispatch(action: Parameters<typeof goalsReducer>[1]) {
+    setCourseGoals((currentGoals) => goalsReducer(currentGoals, action));
   }
 
   function deleteGoal(id: number) {
-    setCourseGoals((currentGoals) =>
-      currentGoals.filter((goal) => goal.id !== id),
-    );
+    dispatch({ type: "DELETE_GOAL", payload: id });
   }
 
   function completeGoal(id: number) {
-    setCourseGoals((currentGoals) =>
-      currentGoals.map((goal) =>
-        goal.id === id ? { ...goal, status: "completed" } : goal,
-      ),
-    );
+    dispatch({ type: "COMPLETE_GOAL", payload: id });
   }
 
   const visibleGoals = useMemo(() => {
@@ -107,7 +94,7 @@ export function useGoals() {
     setSelectedStatus,
     searchQuery,
     setSearchQuery,
-    addGoal,
+    addGoal: (goalData: NewGoalData) => dispatch({ type: "ADD_GOAL", payload: goalData }),
     deleteGoal,
     completeGoal,
   };
