@@ -5,6 +5,7 @@ import TodoList from "./components/TodoList";
 import Settings from "./components/Settings";
 import { useState } from "react";
 
+
 function App() {
   const [activeTab, setActiveTab] = useState<"tracker" | "todo" | "settings">(
     "todo",
@@ -40,7 +41,10 @@ function App() {
           Settings
         </button>
       </nav>
+
     </main>
+
+    
   );
 }
 

@@ -6,19 +6,16 @@ function Header({ type }: Props) {
 
   return (
     type === "tracker" ? 
-      <header>
+      <header className="tracker-header">
         <h1>Learning Tracker</h1>
-        <p>This app will help you track your learning progress.</p>
       </header>
       : type === "todo" ?
-      <header>
+      <header className="todo-header">
         <h1>Todo List</h1>
-        <p>Keep track of your tasks and stay organized.</p>
       </header>
       :
-      <header>
+      <header className="settings-header">
         <h1>Settings</h1>
-        <p>Customize your app experience.</p>
       </header>
   );
 }
