@@ -20,6 +20,7 @@ const Todo = memo(function Todo({ task, onDelete, onComplete }: TodoProps) {
 
       <div className="card_btns">
         <button
+          className="delete-btn"
           onClick={() => onDelete(task.id)}
           aria-label={`Delete ${task.title}`}
         >
@@ -28,6 +29,7 @@ const Todo = memo(function Todo({ task, onDelete, onComplete }: TodoProps) {
 
         {task.status === "pending" && (
           <button
+            className="complete-btn"
             onClick={() => onComplete(task.id)}
             aria-label={`Mark ${task.title} as completed`}
           >
