@@ -183,22 +183,20 @@
 }
 
 .delete-btn {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.4rem;
   border-radius: 8px;
   border: none;
   background: #ef4444;
   color: white;
-  font-size: 16px;
   cursor: pointer;
 }
 
 .complete-btn {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.4rem;
   border-radius: 8px;
   border: none;
   background: #10b981;
   color: white;
-  font-size: 16px;
   cursor: pointer;
 }
 

@@ -1,6 +1,7 @@
 import type { TodoData } from "../types/Todo";
 import Card from "./ui/Card";
 import { memo } from "react";
+import { IconCheck, IconTrash } from "@tabler/icons-react";
 
 type TodoProps = {
   task: TodoData;
@@ -19,23 +20,22 @@ const Todo = memo(function Todo({ task, onDelete, onComplete }: TodoProps) {
       </div>
 
       <div className="card_btns">
-        <button
-          className="delete-btn"
-          onClick={() => onDelete(task.id)}
-          aria-label={`Delete ${task.title}`}
-        >
-          x
-        </button>
-
         {task.status === "pending" && (
           <button
             className="complete-btn"
             onClick={() => onComplete(task.id)}
             aria-label={`Mark ${task.title} as completed`}
           >
-            ✓
+            <IconCheck stroke={2} />
           </button>
         )}
+        <button
+          className="delete-btn"
+          onClick={() => onDelete(task.id)}
+          aria-label={`Delete ${task.title}`}
+        >
+          <IconTrash stroke={2} />
+        </button>
       </div>
     </Card>
   );
