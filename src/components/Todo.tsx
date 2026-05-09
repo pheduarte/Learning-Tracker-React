@@ -15,7 +15,6 @@ const Todo = memo(function Todo({ task, onDelete, onComplete }: TodoProps) {
       <div>
         <h2>{task.title}</h2>
         <p>{task.description}</p>
-        <p>{task.category}</p>
         <p>{task.status}</p>
       </div>
 
