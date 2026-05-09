@@ -2,7 +2,7 @@
 export type TodoCategory =
   | "house"
   | "study"
-  | "groceries"
+  | "Groceries"
   | "bills"
   | "personal"
   | "shopping"

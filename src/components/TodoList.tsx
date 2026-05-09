@@ -60,7 +60,7 @@ function TodoList() {
 
       <div className="filter-group">
         <label className="filter-label" htmlFor="category-filter">
-          Filter by category
+          Category:
         </label>
         <select
           id="category-filter"
@@ -82,7 +82,7 @@ function TodoList() {
         </select>
 
         <label className="filter-label" htmlFor="status-filter">
-          Filter by status
+          Status:
         </label>
         <select
           id="status-filter"

@@ -21,14 +21,13 @@
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   background: inherit;
   border-top: 1px solid #616264;
   margin-bottom: 2px;
 }
-
 
 .todo-header {
   display: flex;
@@ -171,10 +170,16 @@
   gap: 0.5rem;
   padding: 1rem;
   border-radius: 12px;
+  font-size: 0.875rem;
 }
 
 .todo:hover {
   box-shadow: #616264 1px 2px 2px -1px;
+}
+
+.todo h2 {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .delete-btn {
@@ -230,13 +235,20 @@
 /* TodoList Filters */
 .filter-group {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-bottom: 0.5rem;
   font-size: 1rem;
   font-weight: 200;
 }
 
+.filter-group select {
+  padding: 0.15rem;
+  margin-right: 0.25rem;
+  border: #838383 1px solid;
+  border-radius: 10px;
+}
+
 .filter-label {
-  font-size: .875rem;
-  font-weight: 300;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
