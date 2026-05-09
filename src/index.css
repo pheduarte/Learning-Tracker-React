@@ -218,3 +218,25 @@
   font-size: 16px;
   cursor: pointer;
 }
+
+/* TodoList Categories */
+.category-group-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #8383832e;
+}
+
+/* TodoList Filters */
+.filter-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.filter-label {
+  font-size: .875rem;
+  font-weight: 300;
+}

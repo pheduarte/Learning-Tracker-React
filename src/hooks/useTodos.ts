@@ -7,6 +7,9 @@ export function useTodos() {
     const [isLoading, setIsLoading] = useState(true);
     const [todos, setTodos] = useState<TodoData[]>([]);
 
+    const [selectedCategory, setSelectedCategory] = useState<string>("all");
+    const [selectedStatus, setSelectedStatus] = useState<string>("all");
+
     async function addTodo(todoData: NewTodoData) {
         try {
             await createTodo(todoData);
@@ -42,11 +45,27 @@ export function useTodos() {
         };
     }, []);
 
+    function filterTodos() {
+        const categoryFiltered = selectedCategory === "all"
+            ? todos
+            : todos.filter((todo) => todo.category === selectedCategory);
+
+        const statusFiltered = selectedStatus === "all"
+            ? categoryFiltered
+            : categoryFiltered.filter((todo) => todo.status === selectedStatus);
+
+        return statusFiltered;
+    }
+
     return {
-        todos,
+        todos: filterTodos(),
         addTodo,
         deleteTodo,
         completeTodo,
         isLoading,
+        selectedCategory,
+        setSelectedCategory,
+        selectedStatus,
+        setSelectedStatus,
     };
 }
