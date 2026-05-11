@@ -3,12 +3,17 @@ import TodoList from "../TodoList";
 import CourseGoalList from "../CourseGoalList";
 import Settings from "../Settings";
 import WaterTracker from "../WaterTracker";
-import { IconListDetails, IconDroplets, IconSchool, IconSettings } from "@tabler/icons-react";
+import {
+  IconListDetails,
+  IconDroplets,
+  IconSchool,
+  IconSettings,
+} from "@tabler/icons-react";
 
 export function Navbar() {
-  const [activeTab, setActiveTab] = useState<"tracker" | "water" | "todo" | "settings">(
-    "todo",
-  );
+  const [activeTab, setActiveTab] = useState<
+    "tracker" | "water" | "todo" | "settings"
+  >("todo");
 
   return (
     <main className="navbar-container">
