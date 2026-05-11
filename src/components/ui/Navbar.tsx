@@ -19,7 +19,7 @@ export function Navbar() {
     <main className="navbar-container">
       {activeTab === "todo" && <TodoList />}
       {activeTab === "water" && <WaterTracker />}
-      {activeTab === "tracker" && <CourseGoalList />}
+      {/* {activeTab === "tracker" && <CourseGoalList />} */}
       {activeTab === "settings" && <Settings />}
 
       <nav className="bottom-nav" aria-label="Main navigation">
@@ -39,14 +39,14 @@ export function Navbar() {
           <IconDroplets stroke={2} />
           Water
         </button>
-        <button
+        {/* <button
           type="button"
           className={activeTab === "tracker" ? "active" : ""}
           onClick={() => setActiveTab("tracker")}
         >
           <IconSchool stroke={2} />
           Tracker
-        </button>
+        </button> */}
         <button
           type="button"
           className={activeTab === "settings" ? "active" : ""}

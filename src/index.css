@@ -34,7 +34,7 @@
   left: 15px;
   right: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 1rem;
   padding: 0.4rem;
   background: rgba(255, 255, 255, 0.8);
@@ -49,7 +49,7 @@
   left: 15px;
   right: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 1rem;
   padding: 0.4rem;
   background: var(--color-dark-bg);
