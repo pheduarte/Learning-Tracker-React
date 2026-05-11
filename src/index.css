@@ -1,32 +1,67 @@
 @import "tailwindcss";
 
+:root {
+  --font-size: 16px;
+  --color-light-bg: #f5f5f5;
+  --color-light-text: #1f2937;
+  --color-dark-bg: #111827;
+  --color-dark-text: #f9fafb;
+  --color-primary: #3b82f6;
+  --color-secondary: #10b981;
+  --color-danger: #ef4444;
+  --color--border-dark: #61626459;
+  --color--border-light: #83838339;
+}
+
 .app {
   min-height: 100vh;
   padding: 1.5rem;
 }
 
 .app--light {
-  background: #f5f5f5;
-  color: #1f2937;
+  background: var(--color-light-bg);
+  color: var(--color-light-text);
 }
 
 .app--dark {
-  background: #111827;
-  color: #f9fafb;
+  background: var(--color-dark-bg);
+  color: var(--color-dark-text);
 }
 
-.bottom-nav {
+.app--light .bottom-nav {
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: 15px;
+  right: 15px;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   padding: 0.5rem;
-  background: inherit;
-  border-top: 1px solid #616264;
-  margin-bottom: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color--border-light);
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.app--dark .bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: var(--color-dark-bg);
+  border: 1px solid var(--color--border-dark);
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .todo-header {
@@ -48,7 +83,7 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: none;
-  background: #3b82f6;
+  background: var(--color-primary);
   color: white;
 }
 
@@ -56,11 +91,11 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: none;
-  background: #3b82f6;
+  background: var(--color-primary);
   color: white;
-  font-size: 16px;
+  font-size: var(--font-size);
   cursor: pointer;
-  box-shadow: #5285f1 1px 2px 5px -1px;
+  box-shadow: var(--color-primary) 1px 2px 5px -1px;
 }
 
 .card {
@@ -70,70 +105,72 @@
 }
 
 .app--light .card {
-  background: white;
+  background: rgb(255, 255, 255);
+  border: var(--color--border-light) 1px solid;
 }
 
 .app--dark .card {
   background: #1f2937;
+  border: var(--color--border-dark) 1px solid;
 }
 
 .app--light .new-todo-form {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  border: #838383 1px solid;
+  border: var(--color--border-light) 1px solid;
   padding: 1rem;
-  box-shadow: #111827 1px 2px 2px -1px;
-  border-radius: 8px;
+  box-shadow: var(--color--border-dark) 1px 2px 2px -1px;
+  border-radius: 15px;
 }
 
 .app--dark .new-todo-form {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  border: #838383 1px solid;
+  border: var(--color--border-dark) 1px solid;
   padding: 1rem;
-  box-shadow: #111827 1px 2px 2px -1px;
-  border-radius: 8px;
+  box-shadow: var(--color--border-dark) 1px 2px 2px -1px;
+  border-radius: 15px;
 }
 
 .app--light .new-todo-form input,
 .app--light .new-todo-form textarea {
   padding: 0.5rem;
   border-radius: 8px;
-  border: #838383 1px solid;
-  font-size: 16px;
+  border: var(--color--border-light) 1px solid;
+  font-size: var(--font-size);
 }
 
 .app--dark .new-todo-form input,
 .app--dark .new-todo-form textarea {
   padding: 0.5rem;
   border-radius: 8px;
-  border: #838383 1px solid;
-  font-size: 16px;
+  border: var(--color--border-dark) 1px solid;
+  font-size: var(--font-size);
 }
 
 .app--light .new-todo-form select {
   padding: 0.5rem;
   border-radius: 8px;
-  border: #838383 1px solid;
-  font-size: 16px;
+  border: var(--color--border-light) 1px solid;
+  font-size: var(--font-size);
 }
 
 .app--dark .new-todo-form select {
   padding: 0.5rem;
   border-radius: 8px;
-  border: #838383 1px solid;
-  font-size: 16px;
+  border: var(--color--border-dark) 1px solid;
+  font-size: var(--font-size);
 }
 
 .app--light .new-todo-form Button {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: none;
-  background: #3b82f6;
+  background: var(--color-primary);
   color: white;
-  font-size: 16px;
+  font-size: var(--font-size);
   cursor: pointer;
 }
 
@@ -141,9 +178,9 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: none;
-  background: #3b82f6;
+  background: var(--color-primary);
   color: white;
-  font-size: 16px;
+  font-size: var(--font-size);
   cursor: pointer;
 }
 
@@ -151,7 +188,7 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: none;
-  background: #9bbef5;
+  background: var(--color-primary);
   color: white;
   cursor: not-allowed;
 }
@@ -160,7 +197,7 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: none;
-  background: #9bbef5;
+  background: var(--color-primary);
   color: white;
   cursor: not-allowed;
 }
@@ -181,6 +218,26 @@
   gap: 0.5rem;
 }
 
+.app--light .todo-status {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #4f4f4fda;
+  background: #4a4a4a1b;
+  padding: 0.2rem 0.38rem;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.app--dark .todo-status {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #c1c1c6;
+  background: #2b3a57;
+  padding: 0.2rem 0.38rem;
+  border-radius: 8px;
+  width: fit-content;
+}
+
 .todo {
   display: flex;
   flex-direction: row;
@@ -193,7 +250,7 @@
 }
 
 .todo:hover {
-  box-shadow: #616264 1px 2px 2px -1px;
+  box-shadow: var(--color--border-dark) 1px 2px 2px -1px;
 }
 
 .todo h2 {
@@ -205,7 +262,7 @@
   padding: 0.25rem 0.4rem;
   border-radius: 8px;
   border: none;
-  background: #ef4444;
+  background: var(--color-danger);
   color: white;
   cursor: pointer;
 }
@@ -214,7 +271,7 @@
   padding: 0.25rem 0.4rem;
   border-radius: 8px;
   border: none;
-  background: #10b981;
+  background: var(--color-secondary);
   color: white;
   cursor: pointer;
 }
@@ -235,9 +292,9 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: none;
-  background: #3b82f6;
+  background: var(--color-primary);
   color: white;
-  font-size: 16px;
+  font-size: var(--font-size);
   cursor: pointer;
 }
 

@@ -2,16 +2,18 @@ import { useState } from "react";
 import TodoList from "../TodoList";
 import CourseGoalList from "../CourseGoalList";
 import Settings from "../Settings";
-import { IconListDetails, IconSchool, IconSettings } from "@tabler/icons-react";
+import WaterTracker from "../WaterTracker";
+import { IconListDetails, IconDroplets, IconSchool, IconSettings } from "@tabler/icons-react";
 
 export function Navbar() {
-  const [activeTab, setActiveTab] = useState<"tracker" | "todo" | "settings">(
+  const [activeTab, setActiveTab] = useState<"tracker" | "water" | "todo" | "settings">(
     "todo",
   );
 
   return (
-    <main>
+    <main className="navbar-container">
       {activeTab === "todo" && <TodoList />}
+      {activeTab === "water" && <WaterTracker />}
       {activeTab === "tracker" && <CourseGoalList />}
       {activeTab === "settings" && <Settings />}
 
@@ -22,6 +24,15 @@ export function Navbar() {
           onClick={() => setActiveTab("todo")}
         >
           <IconListDetails stroke={2} />
+          Tasks
+        </button>
+        <button
+          type="button"
+          className={activeTab === "water" ? "active" : ""}
+          onClick={() => setActiveTab("water")}
+        >
+          <IconDroplets stroke={2} />
+          Water
         </button>
         <button
           type="button"
@@ -29,6 +40,7 @@ export function Navbar() {
           onClick={() => setActiveTab("tracker")}
         >
           <IconSchool stroke={2} />
+          Tracker
         </button>
         <button
           type="button"
@@ -36,6 +48,7 @@ export function Navbar() {
           onClick={() => setActiveTab("settings")}
         >
           <IconSettings stroke={2} />
+          Settings
         </button>
       </nav>
     </main>

@@ -18,7 +18,7 @@ function Settings() {
           onChange={toggleTheme}
           id="switch-component-blue"
           type="checkbox"
-          className="peer appearance-none w-11 h-5 bg-slate-100 rounded-full checked:bg-blue-600 cursor-pointer transition-colors duration-300"
+          className="peer appearance-none w-11 h-5 bg-slate-300 rounded-full checked:bg-blue-600 cursor-pointer transition-colors duration-300"
         />
         <label
           htmlFor="switch-component-blue"

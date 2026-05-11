@@ -7,14 +7,17 @@ type NewTodoFormProps = {
 };
 
 function NewTodoForm({ onAddTodo }: NewTodoFormProps) {
-  
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <p className="text-lg font-semibold">Hello!</p>
-        <button className="btn-add-task" type="button" onClick={() => setIsCollapsed((prev) => !prev)}>
+        <p className="text-lg font-bold">Hello! 👋</p>
+        <button
+          className="btn-add-task"
+          type="button"
+          onClick={() => setIsCollapsed((prev) => !prev)}
+        >
           {isCollapsed ? "+ New Task" : "X"}
         </button>
       </div>
