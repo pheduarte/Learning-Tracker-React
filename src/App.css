@@ -36,6 +36,11 @@ main {
   color: #ebebeb;
 }
 
+.bottom-nav button svg {
+  width: 18px;
+  height: 18px;
+}
+
 .app--dark .bottom-nav button {
   display: inline-flex;
   flex-direction: column;
