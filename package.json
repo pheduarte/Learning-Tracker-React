@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.10",
+    "@radix-ui/themes": "^3.3.0",
     "@tabler/core": "^1.4.0",
     "@tabler/icons-react": "^3.44.0",
     "@tailwindcss/vite": "^4.2.4",
     "firebase": "^12.13.0",
+    "lucide-react": "^1.14.0",
+    "motion": "^12.38.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "tabler": "^1.0.0",
