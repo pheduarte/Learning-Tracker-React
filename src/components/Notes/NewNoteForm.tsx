@@ -1,36 +1,36 @@
 import { useState } from "react";
-import type { NewTodoData } from "../types/Todo";
-import { TestFormDialog } from "./TestFormDialog";
+import { NoteFormDialog } from "./NoteFormDialog";
+import type { NewNoteData } from "../../types/notes";
 
-type NewTodoFormProps = {
-  onAddTodo: (todoData: NewTodoData) => void;
+type NewNoteFormProps = {
+  onAddNote: (noteData: NewNoteData) => void;
 };
 
-function NewTodoForm({ onAddTodo }: NewTodoFormProps) {
+function NewNoteForm({ onAddNote }: NewNoteFormProps) {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <p className="text-lg font-bold">Hello! 👋</p>
+        <p className="text-lg font-bold"></p>
         <button
           className="btn-add-task"
           type="button"
           onClick={() => setIsCollapsed((prev) => !prev)}
         >
-          {isCollapsed ? "+ New Task" : "X"}
+          {isCollapsed ? "+ New Note" : "X"}
         </button>
       </div>
 
       {!isCollapsed && (
-        <TestFormDialog
+        <NoteFormDialog
           open={true}
           onOpenChange={() => setIsCollapsed(true)}
-          onAdd={onAddTodo}
+          onAdd={onAddNote}
         />
       )}
     </div>
   );
 }
 
-export default NewTodoForm;
+export default NewNoteForm;

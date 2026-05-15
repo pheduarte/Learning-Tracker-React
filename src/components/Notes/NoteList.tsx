@@ -1,26 +1,25 @@
-import { useTodos } from "../hooks/useTodos";
-import Todo from "./Todo";
-import NewTodoForm from "./NewTodoForm";
+import { useNotes } from "../../hooks/useNotes";
+import Notes from "./Notes";
+import NewNoteForm from "./NewNoteForm";
 
-function TodoList() {
+function NoteList() {
   const {
-    todos,
-    addTodo,
-    deleteTodo,
-    completeTodo,
+    notes,
+    addNote,
+    deleteNote,
     isLoading,
     selectedCategory,
     setSelectedCategory,
     selectedStatus,
     setSelectedStatus,
-  } = useTodos();
+  } = useNotes();
 
   if (isLoading) {
-    return <p>Loading tasks...</p>;
+    return <p>Loading notes...</p>;
   }
 
-  function categoryGroup(category: string) {
-    const filtered = todos.filter((todo) => todo.category === category);
+  function categoryGroup(tag: string) {
+    const filtered = notes.filter((note) => note.tag === tag);
 
     if (filtered.length === 0) {
       return null;
@@ -29,16 +28,12 @@ function TodoList() {
     return (
       <div>
         <h2 className="category-group-label">
-          {category.charAt(0).toUpperCase() + category.slice(1)}
+          {tag.charAt(0).toUpperCase() + tag.slice(1)}
         </h2>
         <ul>
-          {filtered.map((todo) => (
-            <li key={todo.id}>
-              <Todo
-                task={todo}
-                onComplete={completeTodo}
-                onDelete={deleteTodo}
-              />
+          {filtered.map((note) => (
+            <li key={note.id}>
+              <Notes note={note} onDelete={deleteNote} />
             </li>
           ))}
         </ul>
@@ -47,7 +42,7 @@ function TodoList() {
   }
 
   function renderCategoryGroups() {
-    const categories = Array.from(new Set(todos.map((todo) => todo.category)));
+    const categories = Array.from(new Set(notes.map((note) => note.tag)));
 
     return categories.map((category) => (
       <div key={category}>{categoryGroup(category)}</div>
@@ -56,7 +51,7 @@ function TodoList() {
 
   return (
     <section className="todo-list">
-      <NewTodoForm onAddTodo={addTodo} />
+      <NewNoteForm onAddNote={addNote} />
 
       <div className="filter-group">
         <label className="filter-label" htmlFor="category-filter">
@@ -98,8 +93,8 @@ function TodoList() {
         </select>
       </div>
 
-      {todos.length === 0 ? (
-        <p>No tasks found. Add a new task to get started!</p>
+      {notes.length === 0 ? (
+        <p>No notes found. Add a new note to get started!</p>
       ) : (
         renderCategoryGroups()
       )}
@@ -107,4 +102,4 @@ function TodoList() {
   );
 }
 
-export default TodoList;
+export default NoteList;

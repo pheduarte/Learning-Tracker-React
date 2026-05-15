@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import type { NewTodoData, TodoCategory } from "../types/Todo";
+import type { NewTodoData, TodoCategory } from "../../types/Todo";
 
 interface TestFormDialogProps {
   open: boolean;

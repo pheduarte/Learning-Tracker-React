@@ -1,22 +1,23 @@
-type Props = {
-  type: "tracker" | "todo" | "settings";
+import type { ActiveTab } from "./ui/Navbar";
+import { IconHandLoveYou } from "@tabler/icons-react";
+
+type HeaderProps = {
+  tab: ActiveTab;
 };
 
-function Header({ type }: Props) {
+function Header({ tab }: HeaderProps) {
 
   return (
-    type === "tracker" ? 
-      <header className="tracker-header">
-        <h1>Learning Tracker</h1>
-      </header>
-      : type === "todo" ?
-      <header className="todo-header">
-        <h1>Todo List</h1>
-      </header>
-      :
-      <header className="settings-header">
-        <h1>Settings</h1>
-      </header>
+    <header className="app-header">
+      {tab === "home" && 
+      <div>
+        <h1 className="text-lg font-bold">Welcome </h1>
+        <IconHandLoveYou stroke={2} />
+      </div>}
+      {tab === "todo" && <h1 className="text-lg font-bold">Tasks</h1>}
+      {tab === "notes" && <h1 className="text-lg font-bold">Notes</h1>}
+      {tab === "settings" && <h1 className="text-lg font-bold">Settings</h1>}
+    </header>
   );
 }
 

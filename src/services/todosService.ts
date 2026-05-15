@@ -14,16 +14,16 @@ import type { NewTodoData, TodoData } from "../types/Todo";
 const todosCollection = collection(db, "todos");
 
 export async function createTodo(todoData: NewTodoData) {
-    console.log("Creating todo:", todoData);
+  console.log("Creating todo:", todoData);
 
-    const docRef = await addDoc(todosCollection, {
-        title: todoData.title,
-        description: todoData.description,
-        category: todoData.category,
-        status: "pending",
-    });
+  const docRef = await addDoc(todosCollection, {
+    title: todoData.title,
+    description: todoData.description,
+    category: todoData.category,
+    status: "pending",
+  });
 
-    console.log("Todo created with ID:", docRef.id);
+  console.log("Todo created with ID:", docRef.id);
 }
 
 export async function removeTodo(id: string) {

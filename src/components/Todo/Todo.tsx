@@ -1,5 +1,5 @@
-import type { TodoData } from "../types/Todo";
-import Card from "./ui/Card";
+import type { TodoData } from "../../types/Todo";
+import Card from "../ui/Card";
 import { memo } from "react";
 import { IconCheck, IconTrash } from "@tabler/icons-react";
 
