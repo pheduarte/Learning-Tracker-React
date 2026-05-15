@@ -9,6 +9,7 @@
   --color-primary: #3b82f6;
   --color-secondary: #10b981;
   --color-danger: #ef4444;
+  --color-warning: #f59e0b;
   --color--border-dark: #61626459;
   --color--border-light: #83838339;
 }
@@ -365,4 +366,19 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+}
+
+.dashboard-stat-completed {
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+.dashboard-stat-pending {
+  color: var(--color-warning);
+  font-weight: 500;
+}
+
+.dashboard-stat-completion {
+  color: var(--color-success);
+  font-weight: 800;
 }

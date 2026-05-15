@@ -68,9 +68,9 @@ function Dashboard({ onNavigate }: DashboardProps) {
           </div>
 
           <div className="dashboard-stats-body">
-            <p>Completed: {stats.completed}</p>
-            <p>Pending: {stats.activeTasks}</p>
-            <p>Completion: {stats.completionPercentage}%</p>
+            <p className="dashboard-stat-completed">Completed: {stats.completed}</p>
+            <p className="dashboard-stat-pending">Pending: {stats.activeTasks}</p>
+            <p className="dashboard-stat-completion">{stats.completionPercentage}%</p>
           </div>
         </div>
       </button>
